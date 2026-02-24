@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech-to-Text Transcription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Voice-to-Text Transcription</h1>
+    <h1>By Abdulbasit Yusuf</h1>
+
+    <div class="controls">
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="ha">Hausa</option>
+        <option value="yo">Yoruba</option>
+        <option value="ig">Igbo</option>
+        <!-- Add more supported Whisper languages as needed -->
+      </select>
+
+      <button id="recordBtn">Start Recording</button>
+      <button id="stopBtn" disabled>Stop Recording</button>
+
+      <label for="fileInput">Upload Audio File:</label>
+      <input type="file" id="fileInput" accept="audio/*">
+
+      <label class="switch">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider round"></span> Dark Mode
+      </label>
+    </div>
+
+    <div id="waveform"></div>
+
+    <audio id="audioPlayer" controls class="hidden"></audio>
+
+    <div id="spinner" class="hidden">Processing...</div>
+
+    <div class="output">
+      <h2>Transcription</h2>
+      <p id="transcript">Your transcription will appear here.</p>
+      <a id="downloadBtn" class="hidden" type="text/plain" href="#">Download Transcription</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
